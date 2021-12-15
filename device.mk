@@ -29,9 +29,8 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     system_ext \
     vbmeta_system \
-    vendor \
-    vendor_boot
-
+    vendor
+    
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
