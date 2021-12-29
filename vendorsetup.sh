@@ -19,9 +19,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_DEVICE_ALT="X689"
 	export LC_ALL="C"
 	export OF_AB_DEVICE=1
+	export FOX_DRASTIC_SIZE_REDUCTION=1
 	export ALLOW_MISSING_DEPENDENCIES=true
-	export OF_QUICK_BACKUP_LIST="/boot;/data;"
-	export OF_USE_NEW_MAGISKBOOT=1
+	export OF_QUICK_BACKUP_LIST="/data;"
+	export OF_USE_MAGISKBOOT=1
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
@@ -39,10 +40,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_TARGET_DEVICES="Infinix-X689, Infinix-X689B, X689, X689B"
 	
 	# OTA
-	export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 
+	# encryption
+	export OF_DISABLE_FORCED_ENCRYPTION=1
+	export OF_DISABLE_DM_VERITY_FORCED_ENCRYPTION=1
+	
 	# screen settings
 	export OF_SCREEN_H=2340
 	export OF_STATUS_H=80
@@ -52,6 +56,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# Bootimage Partition path
 	export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
+	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
+	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
 	
 	# flashlight
 	export OF_FLASHLIGHT_ENABLE=1
@@ -64,7 +70,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_VERSION="R11.1"
 	export FOX_VARIANT=BETA
 	export OF_PATCH_AVB20=1
-	export OF_MAINTAINER="R E D F O X"
+	export OF_MAINTAINER="V E R G I L"
 	export FOX_ADVANCED_SECURITY=1
 	export OF_USE_TWRP_SAR_DETECT=1
 
