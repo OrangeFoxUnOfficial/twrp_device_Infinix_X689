@@ -1,5 +1,4 @@
 # mount point       fstype    device                                                                flags
-/cache              ext4      /dev/block/platform/bootdevice/by-name/cache                          
 /tranfs             ext4      /dev/block/platform/bootdevice/by-name/tranfs                         flags=display="Tranfs";
 /protect_f          ext4      /dev/block/platform/bootdevice/by-name/protect1                       flags=display="Protect_f";backup=1;
 /protect_s          ext4      /dev/block/platform/bootdevice/by-name/protect2                       flags=display="Protect_s";backup=1;
